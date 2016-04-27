@@ -18,7 +18,19 @@ class UserTableSeeder extends Seeder
         	'lastName' => 'Vargas',
         	'email' => 'infosam@gmail.com',
         	'password' => '123',
-        	'role' => 'admin'
+        	'role' => 'admin',
+        	'date' => date($format = 'Y-m-d'),
+        	'initial_date' => date($format = 'Y-m-d'),
+        	'final_date' => date($format = 'Y-m-d'),
+        	'imageQR' => 'la imagen Qr es aqui',
+        	'codigo_pin' => '1234'
+
+
+
+
+
+
+
     	]);
         factory(App\User::class, 4)->create();
 

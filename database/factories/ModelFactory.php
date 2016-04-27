@@ -20,6 +20,10 @@ $factory->define(App\User::class, function ($faker) {
         'password' => str_random(10),
         'role' => $faker->randomElement(['member', 'admin']),
         'date' => $faker->date($format = 'Y-m-d', $max = 'now'),
+		'initial_date' => $faker->date($format = 'Y-m-d', $max = 'now'),
+        'final_date' => $faker->date($format = 'Y-m-d', $max = 'now'),
+        'imageQR' => $faker->imageUrl($width = 640, $height = 480),
+        'codigo_pin' => $faker->numberBetween($min = 1000, $max = 9000) ,
         'remember_token' => str_random(10),
     ];
 });

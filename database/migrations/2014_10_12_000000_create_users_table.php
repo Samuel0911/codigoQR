@@ -21,6 +21,10 @@ class CreateUsersTable extends Migration
             $table->string('password', 60);
             $table->enum('role', ['member', 'admin']);
             $table->date('date');
+            $table->date('initial_date');
+            $table->date('final_date');
+            $table->string('imageQR');
+            $table->string('codigo_pin');
             $table->rememberToken();
             $table->timestamps();
         });
