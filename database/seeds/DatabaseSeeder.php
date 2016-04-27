@@ -13,9 +13,11 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         Model::unguard();
-
+        DB::statement("SET foreign_key_checks = 0");
         $this->call('UserTableSeeder');
+        $this->call('CompanyTableSeeder');
 
         Model::reguard();
+        DB::statement("SET foreign_key_checks = 1");
     }
 }
