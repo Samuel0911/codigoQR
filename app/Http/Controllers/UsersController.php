@@ -42,6 +42,7 @@ class UsersController extends Controller
     {
         $user = new User($request->all());
         $user->password = bcrypt($request->password);
+  
         $user->save();
 
         Flash::success("Se ha registrado " . $user->name . " de forma exitosa! ");
