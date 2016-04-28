@@ -20,6 +20,7 @@
 			<div class="panle-body">
 				
 				@include('flash::message')
+				@include('admin.template.partials.errors')
 				@yield('content')
 			</div>			
 		</div>

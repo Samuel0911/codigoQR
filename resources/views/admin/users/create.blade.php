@@ -42,23 +42,21 @@
 		</div>
 
 		<div class="form-group">			
-			{!! Form::label('initial_date', 'Start Date') !!}
+			{!! Form::label('start_date', 'Start Date') !!}
 
-			{!! Form::date('initial_date', $date->toW3cString(),['class' => 'form-control'], 'required') !!}
+			{!! Form::date('start_date', $date->toW3cString(),['class' => 'form-control'], 'required') !!}
 		</div>
 
 		<div class="form-group">			
-			{!! Form::label('final_date', 'End Date') !!}
+			{!! Form::label('end_date', 'End Date') !!}
 
-			{!! Form::date('final_date', $date->toW3cString(),['class' => 'form-control'], 'required') !!}
+			{!! Form::date('end_date', $date->toW3cString(),['class' => 'form-control'], 'required') !!}
 		</div>
 		
 		<div class="form-group">
 			{!! Form::label('codigo_pin', 'Code') !!}
 			{!! Form::number('codigo_pin', null, ['class' => 'form-control', 'placeholder' => 'Code', 'required']) !!}
 		</div>
-
-
 
 		<div class="form-group">
 			{!! Form::submit('Registrar', ['class' => 'btn btn-primary']) !!}

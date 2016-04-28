@@ -20,8 +20,8 @@ class UserTableSeeder extends Seeder
         	'password' => '123',
         	'role' => 'admin',
         	'date' => date($format = 'Y-m-d'),
-        	'initial_date' => date($format = 'Y-m-d'),
-        	'final_date' => date($format = 'Y-m-d'),
+        	'start_date' => date($format = 'Y-m-d'),
+        	'end_date' => date($format = 'Y-m-d'),
         	'imageQR' => 'la imagen Qr es aqui',
         	'codigo_pin' => '1234'
 
