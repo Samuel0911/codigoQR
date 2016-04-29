@@ -9,6 +9,8 @@
 
 @section('content')
 	
+	<a href="{!!URL::to('/company/create')!!}" class="btn btn-primary" >Registrar Compañia</a>
+	
 	<table class="table">
 		<thead>
 			<th>Nombre</th>

@@ -15,6 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::resource('company','CompanyController');
 
 Route::group(['prefix' => 'admin'], function(){
 
@@ -27,5 +28,3 @@ Route::group(['prefix' => 'admin'], function(){
 	Route::resource('assistances','AssistancesController');
 
 });
-
-Route::resource('company','CompanyController');
