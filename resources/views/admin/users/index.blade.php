@@ -14,6 +14,7 @@
 			<th>Email</th>
 			<th>Role</th>
 			<th>Date</th>
+			<th>Code</th>
 			<th>&nbsp&nbsp&nbsp  Actions</th>
 		</thead>
 		<tbody>
