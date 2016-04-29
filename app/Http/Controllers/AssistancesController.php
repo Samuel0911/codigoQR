@@ -6,12 +6,11 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use Laracasts\Flash\Flash;
 use App\User;
-use App\Company;
+use App\Assistance;
 use Carbon\Carbon;
 
-class UsersController extends Controller
+class AssistancesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -20,8 +19,8 @@ class UsersController extends Controller
      */
     public function index()
     {
-        $users = User::orderBy('id', 'ASC')->paginate(5);
-        return view('admin.users.index')->with('users', $users);
+         $assistances = Assistance::orderBy('id', 'ASC')->paginate(5);
+        return view('admin.assistances.index')->with('assistances', $assistances);
     }
 
     /**
@@ -31,10 +30,13 @@ class UsersController extends Controller
      */
     public function create()
     {
-        
-        
-        return view('admin.users.create');
-
+        $date = Carbon::now();
+        $date1 = Carbon::now();
+        $users = User::all();//con esto le pasamos los datos de la tabla users
+        return view('admin.assistances.create')
+                ->with('users', $users)
+                ->with('date', $date)
+                ->with('date1', $date1);//parametros para manipular los campos de la tabla users
     }
 
     /**
@@ -45,15 +47,13 @@ class UsersController extends Controller
      */
     public function store(Request $request)
     {
-        $user = new User($request->all());
-        $user->password = bcrypt($request->password);
-  
-        $user->save();
+        $assistance = new Assistance($request->all());
+        dd($assistance);
+        $assistance->save();
 
-        Flash::success("Se ha registrado " . $user->name . " de forma exitosa! ");
+        Flash::success("Se ha registrado ");
         
-        return redirect()->route('admin.users.index');
-                
+        return redirect()->route('admin.assistances.index');
     }
 
     /**
@@ -75,8 +75,7 @@ class UsersController extends Controller
      */
     public function edit($id)
     {
-        $user = User::find($id);
-        return view('admin.users.edit')->with('user', $user);
+        //
     }
 
     /**
@@ -88,18 +87,7 @@ class UsersController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $user = User::find($id);
-        //$user->fill($request->all());     <-- esta linea hace lo mismo q las otras tres de bajo 
-        $user->name = $request->name;
-        $user->lastName = $request->lastName;
-        $user->doc_id = $request->doc_id;
-        $user->email = $request->email;
-        $user->role = $request->role;
-        $user->codigo_pin = $request->codigo_pin;
-        $user->save();
-
-        Flash::warning('El usuario ' . $user->name . ' ha sido editado correctamente' );
-        return redirect()->route('admin.users.index');
+        //
     }
 
     /**
@@ -110,10 +98,6 @@ class UsersController extends Controller
      */
     public function destroy($id)
     {
-        $user = User::find($id);
-        $user->delete();
-
-        Flash::error('El usuario ' . $user->name . ' ha sido elimando correctamente');
-        return redirect()->route('admin.users.index');
+        //
     }
 }

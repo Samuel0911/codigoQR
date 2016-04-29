@@ -24,6 +24,8 @@ Route::group(['prefix' => 'admin'], function(){
 		'as'	=> 'admin.users.destroy'
 	]);
 
+	Route::resource('assistances','AssistancesController');
+
 });
 
 Route::resource('company','CompanyController');
