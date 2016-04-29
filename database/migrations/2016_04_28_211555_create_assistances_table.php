@@ -19,7 +19,7 @@ class CreateAssistancesTable extends Migration
             $table->date('date');
             $table->decimal('work_hours', 5,2);
             $table->timestamps();
-            $table->integer('user_id')->unsigned();
+            $table->unsignedInteger('user_id')->nullable();
             $table->foreign('user_id')
                     ->references('id')->on('users')
                     ->onDelete('cascade');
