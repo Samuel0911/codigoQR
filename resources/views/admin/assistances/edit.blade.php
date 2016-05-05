@@ -3,7 +3,7 @@
 @section('title', 'Update Assistances')
 
 @section('content')
-{!! Form::open(['route' => 'admin.assistances.update', $assistance, 'method' => 'PUT']) !!}
+{!! Form::open(['route' => ['admin.assistances.update', $assistance], 'method' => 'PUT']) !!}
 		
 		<div class="form-group">			
 			{!! Form::label('check_in', 'Check In') !!}		

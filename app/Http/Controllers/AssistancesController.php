@@ -35,6 +35,7 @@ class AssistancesController extends Controller
         $date1 = Carbon::now();
         $users = User::all();//con esto le pasamos los datos de la tabla users
         return view('admin.assistances.create')
+
                 ->with('users', $users)
                 ->with('date', $date)
                 ->with('date1', $date1);//parametros para manipular los campos de la tabla users
@@ -78,10 +79,13 @@ class AssistancesController extends Controller
         $assistance = Assistance::find($id);
         $date = Carbon::now();
         $date1 = Carbon::now();
+
         return view('admin.assistances.edit')
+
                 ->with('assistance', $assistance)
                 ->with('date', $date)
-                ->with('date1', $date1);;
+                ->with('date1', $date1);
+        
     }
 
     /**
@@ -93,14 +97,9 @@ class AssistancesController extends Controller
      */
     public function update(Request $request, $id)
     {
+
         $assistance = Assistance::find($id);
-        //$assistance->fill($request->all());
-
-        $assistance->check_in = $request->check_in;
-        $assistance->check_out = $request->check_out;
-        $assistance->date = $request->date;
-        $assistance->work_hours = $request->work_hours;
-
+        $assistance->fill($request->all());
 
         $assistance->save();
         Flash::warning('La asistencia ha sido edita correctamente');

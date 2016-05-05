@@ -15,7 +15,7 @@
 			<th>&nbsp&nbsp&nbsp  Actions</th>
 		</thead>
 		<tbody>
-			@foreach ($assistances as $assistance) 
+			@foreach($assistances as $assistance) 
 				<tr>
 					<td>{{ $assistance->id }}</td>
 					<td>{{ $assistance->check_in }}</td>
