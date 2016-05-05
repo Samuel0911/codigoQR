@@ -8,6 +8,8 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Laracasts\Flash\Flash;
 use App\User;
+use App\Company;
+use Carbon\Carbon;
 
 class UsersController extends Controller
 {
@@ -29,7 +31,10 @@ class UsersController extends Controller
      */
     public function create()
     {
+        
+        
         return view('admin.users.create');
+
     }
 
     /**

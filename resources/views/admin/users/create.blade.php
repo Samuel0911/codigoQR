@@ -36,16 +36,21 @@
 
 
 {!! $date = \Carbon\Carbon::now() !!}
-		<div class="form-group">			
+		<div class="form-group">
+
 			{!! Form::label('date', 'Date') !!}			
 			{!! Form::date('date', $date ,['class' => 'form-control'], 'required') !!}
-		</div>
+		</div>			
 
-		<div class="form-group">			
+
+		<div class="form-group">
+
 			{!! Form::label('start_date', 'Start Date') !!}
 
 			{!! Form::date('start_date', $date->toW3cString(),['class' => 'form-control'], 'required') !!}
-		</div>
+		</div>			
+			
+
 
 		<div class="form-group">			
 			{!! Form::label('end_date', 'End Date') !!}
@@ -79,3 +84,6 @@
 
 	{!! Form::close() !!}
 @endsection
+
+
+	
