@@ -91,8 +91,7 @@ class UsersController extends Controller
     public function update(Request $request, $id)
     {
         $user = User::find($id);
-        dd($user);
-        //$user->fill($request->all());     <-- esta linea hace lo mismo q las otras tres de bajo 
+         //$user->fill($request->all());     <-- esta linea hace lo mismo q las otras tres de bajo 
         $user->name = $request->name;
         $user->lastName = $request->lastName;
         $user->doc_id = $request->doc_id;
