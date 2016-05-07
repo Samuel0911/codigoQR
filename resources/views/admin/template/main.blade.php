@@ -4,6 +4,8 @@
 	<meta charset="UTF-8">
 	<title>@yield('title', 'Default') | Panel de Administracion</title>
 	<link rel="stylesheet" href="{{ asset('plugins/bootstrap/css/bootstrap.css') }}">
+	<link rel="stylesheet" href="{{ asset('plugins/calendario/css/calendario.css') }}">
+	<link rel="stylesheet" href="{{ asset('plugins/calendario/css/estilos.css') }}">
 
 </head>
 
@@ -41,6 +43,7 @@
 
 	<script src="{{ asset('plugins/bootstrap/js/jquery.js') }}"></script>	
 	<script src="{{ asset('plugins/bootstrap/js/bootstrap.js') }}"></script>
+	<script src="{{ asset('plugins/calendario/js/calendario.js') }}"></script>
 
 
 	@yield('js')
