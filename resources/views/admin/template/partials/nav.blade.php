@@ -17,16 +17,15 @@
       
 
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Inicio <span class="sr-only">(current)</span></a></li>
-        <li><a href="{{ route('admin.users.index') }}">Usuarios</a></li>
-        <li><a href="{!!URL::to('/company')!!}">Company</a></li>
-        <li><a href="#">Articulos</a></li>
-        <li><a href="#">Imagenes</a></li>
-        <li><a href="#">Tags</a></li>
+        <li class="active"><a href="#">Home <span class="sr-only">(current)</span></a></li>
+        <li><a href="{{ route('admin.users.index') }}">Users</a></li>
+        <li><a href="{!! URL::to('/company') !!}">Company</a></li>
+        <li><a href="#">Assistances</a></li>
+        <li><a href="#">Images</a></li>
       </ul>
       
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Pagina Principal</a></li>
+        <li><a href="#">Main</a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="caret"></span></a>
           <ul class="dropdown-menu">
