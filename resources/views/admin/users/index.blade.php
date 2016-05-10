@@ -70,6 +70,7 @@
      <br/>
     <input type="button" value="Generate QR" onclick="update_qrcode()" class="btn btn-primary"/>
     <a href=""><div id="qr"></div></a>
+    <input type="button" value="Save code QR" >
   </form>
 
 </div>

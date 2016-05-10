@@ -35,7 +35,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
 		'as'	=> 'admin.assistances.destroy'
 		
 		]);
-
+	
 });
 
 Route::get('admin/auth/login', [
@@ -55,3 +55,6 @@ Route::get('admin/auth/logout',  [
 	'uses'	=> 'Auth\AuthController@getLogout',
 	'as'	=> 'admin.auth.logout'
 ]);
+
+
+

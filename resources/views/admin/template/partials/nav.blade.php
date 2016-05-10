@@ -22,7 +22,7 @@
         <li><a href="{{ route('admin.users.index') }}">Usuarios</a></li>
         <li><a href="{!!URL::to('/company')!!}">Company</a></li>
         <li><a href="{{ route('admin.assistances.index') }} ">Assistance</a></li>
-        <li><a href="#">Image</a></li>
+        <li><a href="# ">Image</a></li>
 
       </ul>
       
