@@ -45,8 +45,51 @@
 		</tbody>
 
 	</table>
+
+<body onload="update_qrcode()" >
+
+<h1>QR Code Generator</h1>
+
+
+<div class="section">
+
+  <form name="qrForm">
+    <span>TypeNumber:</span>
+    <select name="t"></select>
+    <span>ErrorCorrectLevel:</span>
+    <select name="e">
+      <option value="L">L(7%)</option>
+      <option value="M" selected="selected">M(15%)</option>
+      <option value="Q">Q(25%)</option>
+      <option value="H">H(30%)</option>
+    </select>
+    <br/>
+    
+    <textarea name="msg" rows="10" cols="40">here comes the data for create the qr!</textarea>
+   
+     <br/>
+    <input type="button" value="Generate QR" onclick="update_qrcode()" class="btn btn-primary"/>
+    <a href=""><div id="qr"></div></a>
+    <input type="button" value="Save code QR" >
+  </form>
+
+</div>
+
+
+<script type="text/javascript">
+!function() {
+  var t = document.forms['qrForm'].elements['t'];
+  for (var i = 1; i <= 40; i += 1) {
+    var opt = document.createElement('option');
+    opt.appendChild(document.createTextNode(''+ i) );
+    opt.value = '' + i;
+    t.appendChild(opt);
+  }
+  t.value = '4';
+}();
+</script>
+
 	<div class="text-center">
 		{!! $users->render() !!}
 	</div>
-	
 @endsection
