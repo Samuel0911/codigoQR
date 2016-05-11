@@ -21,7 +21,8 @@ class UsersController extends Controller
     public function index()
     {
         $users = User::orderBy('id', 'ASC')->paginate(5);
-        return view('admin.users.index')->with('users', $users);
+        return view('admin.users.index')
+                ->with('users', $users);
     }
 
     /**
@@ -75,7 +76,8 @@ class UsersController extends Controller
     public function edit($id)
     {
         $user = User::find($id);
-        return view('admin.users.edit')->with('user', $user);
+        return view('admin.users.edit')
+                ->with('user', $user);
     }
 
     /**
@@ -88,7 +90,7 @@ class UsersController extends Controller
     public function update(Request $request, $id)
     {
         $user = User::find($id);
-        //$user->fill($request->all());     <-- esta linea hace lo mismo q las otras tres de bajo 
+         //$user->fill($request->all());     <-- esta linea hace lo mismo q las otras tres de bajo 
         $user->name = $request->name;
         $user->lastName = $request->lastName;
         $user->doc_id = $request->doc_id;
