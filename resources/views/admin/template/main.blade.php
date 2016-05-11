@@ -7,6 +7,9 @@
 	<link rel="stylesheet" href="{{ asset('plugins/calendario/css/calendario.css') }}">
 	<link rel="stylesheet" href="{{ asset('plugins/calendario/css/estilos.css') }}">
 
+
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}" />
+
 </head>
 
 <body class="admin-body" >
@@ -45,8 +48,14 @@
 	<script src="{{ asset('plugins/bootstrap/js/bootstrap.js') }}"></script>
 	<script src="{{ asset('plugins/calendario/js/calendario.js') }}"></script>
 
+	<script src="{{ asset('js/qrcode.js') }} "></script>
+  	<script src="{{ asset('js/qrcode_SJIS.js') }}"></script>
+  	<script src="{{ asset('js/sample.js') }} "></script>
+  	<script src="{{ asset('js/plusone.js') }}"></script>
 
 	@yield('js')
+
+
 	
 	</div>
 </body>
