@@ -18,22 +18,14 @@
       @if(Auth::user())      
 
       <ul class="nav navbar-nav">
-<<<<<<< HEAD
+
 
         <li class="active"><a href="#">Inicio <span class="sr-only">(current)</span></a></li>
         <li><a href="{{ route('admin.users.index') }}">Usuarios</a></li>
         <li><a href="{!!URL::to('/company')!!}">Company</a></li>
         <li><a href="{{ route('admin.assistances.index') }} ">Assistance</a></li>
         <li><a href="#">Image</a></li>
-=======
 
-        <li class="active"><a href="#">Inicio <span class="sr-only">(current)</span></a></li>
-        <li><a href="{{ route('admin.users.index') }}">Usuarios</a></li>
-        <li><a href="{!!URL::to('/company')!!}">Company</a></li>
-        <li><a href="{{ route('admin.assistances.index') }} ">Assistance</a></li>
-        <li><a href="# ">Image</a></li>
-
->>>>>>> dd30d6220ce362845a2d9e3b7edbc914141656f3
       </ul>
       
       <ul class="nav navbar-nav navbar-right">
