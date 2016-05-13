@@ -20,16 +20,14 @@
       <ul class="nav navbar-nav">
 
 
-        <li class="active"><a href="#">Inicio <span class="sr-only">(current)</span></a></li>
-        <li><a href="{{ route('admin.users.index') }}">Usuarios</a></li>
+        <li class="active"><a href="{{ route('admin.index') }}">Main <span class="sr-only">(current)</span></a></li>
+        <li><a href="{{ route('admin.users.index') }}">Users</a></li>
         <li><a href="{!!URL::to('/company')!!}">Company</a></li>
-        <li><a href="{{ route('admin.assistances.index') }} ">Assistance</a></li>
-        <li><a href="#">Image</a></li>
+        <li><a href="{{ route('admin.assistances.index') }} ">Assistance</a></li>        
 
       </ul>
       
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Main</a></li>
+      <ul class="nav navbar-nav navbar-right">       
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ Auth::user()->name . "  ".Auth::user()->lastName  }}<span class="caret"></span></a>
           <ul class="dropdown-menu">

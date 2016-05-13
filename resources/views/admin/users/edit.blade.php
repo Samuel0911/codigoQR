@@ -36,13 +36,16 @@
 			{!! Form::number('codigo_pin', $user->codigo_pin, ['class' => 'form-control', 'placeholder' => 'Code', 'required']) !!}
 		</div>
 
-
+		<div class="form-group">
+			{!! Form::label('imageQR', 'ImageQR') !!}
+			{!! Form::text('imageQR', DNS2D::getBarcodePNGPath("$user->name, $user->lastName, $user->doc_id", "QRCODE"), ['class' => 'form-control', 'placeholder' => 'Last Name', 'required']) !!}					
+		</div>
 
 		<div class="form-group">
-			{!! Form::submit('Registrar', ['class' => 'btn btn-primary']) !!}
-			
+			{!! Form::submit('Update', ['class' => 'btn btn-primary']) !!}
 		</div>
 
 	{!! Form::close() !!}
+
 
 @endsection

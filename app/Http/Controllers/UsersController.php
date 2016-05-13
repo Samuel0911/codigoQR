@@ -10,6 +10,8 @@ use Laracasts\Flash\Flash;
 use App\User;
 use App\Company;
 use Carbon\Carbon;
+use \Milon\Barcode\DNS1D;
+use \Milon\Barcode\DNS2D;
 
 class UsersController extends Controller
 {
@@ -96,8 +98,8 @@ class UsersController extends Controller
         $user->doc_id = $request->doc_id;
         $user->email = $request->email;
         $user->role = $request->role;
-        $user->codigo_pin = $request->codigo_pin;
-        $user->save();
+        $user->codigo_pin = $request->codigo_pin;                                       
+        $user->save();        
 
         Flash::warning('El usuario ' . $user->name . ' ha sido editado correctamente' );
         return redirect()->route('admin.users.index');
