@@ -1,9 +1,9 @@
 @extends('admin.template.main')
 
-@section('title', 'Lista de Asistencia')
+@section('title', 'Assitance List')
 
 @section('content')
-	<a href="{{ route('admin.assistances.create') }}" class="btn btn-info" >Registrar Asistencia</a>
+	<a href="{{ route('admin.assistances.create') }}" class="btn btn-info" >Add Assistance</a>
 
 	<table class="table table-striped"> 
 		<thead> 
@@ -24,9 +24,9 @@
 					<td>{{ $assistance->work_hours }}</td>
 					
 					<td>
-						<a href="{{ route('admin.assistances.edit', $assistance->id) }}" class="btn btn-warning"><span class=" glyphicon glyphicon-wrench" aria-hidden="true" >&nbsp</span>Editar</a>
+						<a href="{{ route('admin.assistances.edit', $assistance->id) }}" class="btn btn-warning"><span class=" glyphicon glyphicon-wrench" aria-hidden="true" >&nbsp</span>Edit</a>
 						
-						<a href=" {{ route('admin.assistances.destroy', $assistance->id) }} " onclick="return confirm('Seguro que desea eliminar al usuario? ')" class="btn btn-danger"><span class=" glyphicon glyphicon-remove-circle" aria-hidden="true" >&nbsp</span>Eliminar</a> 		
+						<a href=" {{ route('admin.assistances.destroy', $assistance->id) }} " onclick="return confirm('Seguro que desea eliminar al usuario? ')" class="btn btn-danger"><span class=" glyphicon glyphicon-remove-circle" aria-hidden="true" >&nbsp</span>Delete</a> 		
 					</td>
 				</tr>			
 				

@@ -3,31 +3,31 @@
 @section('title', 'Update Assistances')
 
 @section('content')
-{!! Form::open(['route' => ['admin.assistances.update', $assistance], 'method' => 'PUT']) !!}
+{!! Form::model($assistance,['route' => ['admin.assistances.update', $assistance->id], 'method' => 'PUT']) !!}
 		
 		<div class="form-group">			
-			{!! Form::label('check_in', 'Check In') !!}		
-			{!! Form::date('check_in', $date->toTimeString() ,['class' => 'form-control'], 'required') !!}
+			{!! Form::label('date0', 'Check In') !!}		
+			{!! Form::datetime('check_in', null,['class' => 'form-control']) !!}
 		</div>
 
 		<div class="form-group">			
-			{!! Form::label('check_out', 'Check Out') !!}	
+			{!! Form::label('date1', 'Check Out') !!}	
 
-			{!! Form::date('check_out', $date1->toTimeString() ,['class' => 'form-control'], 'required') !!}
+			{!! Form::datetime('check_out', $dtout = \Carbon\Carbon::now() ,['class' => 'form-control']) !!}
 		</div>
 
 		<div class="form-group">			
 			{!! Form::label('date', 'Date') !!}			
-			{!! Form::date('date', $date ,['class' => 'form-control'], 'required') !!}
+			{!! Form::date('date', null ,['class' => 'form-control']) !!}
 		</div>
 
 		<div class="form-group">
 			{!! Form::label('work_hours', 'Work Hours') !!}
-			{!! Form::number('work_hours' , null, ['class' => 'form-control', 'placeholder' => '0.0', 'required']) !!}
+			{!! Form::number('work_hours' , null, ['class' => 'form-control', 'placeholder' => '0.0']) !!}
 		</div>
 		
 		<div class="form-group">
-			{!! Form::submit('Editar', ['class' => 'btn btn-primary']) !!}
+			{!! Form::submit('Update', ['class' => 'btn btn-primary']) !!}
 			
 		</div>
 

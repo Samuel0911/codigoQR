@@ -77,14 +77,8 @@ class AssistancesController extends Controller
     public function edit($id)
     {
         $assistance = Assistance::find($id);
-        $date = Carbon::now();
-        $date1 = Carbon::now();
 
-        return view('admin.assistances.edit')
-
-                ->with('assistance', $assistance)
-                ->with('date', $date)
-                ->with('date1', $date1);
+        return view('admin.assistances.edit',['assistance'=>$assistance]);
         
     }
 
