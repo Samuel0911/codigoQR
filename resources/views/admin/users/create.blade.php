@@ -82,8 +82,9 @@
 			
 		</div>
 
+
+
 	{!! Form::close() !!}
+
+
 @endsection
-
-
-	

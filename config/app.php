@@ -78,7 +78,7 @@ return [
     |
     */
 
-    'key' => env('APP_KEY', 'SomeRandomString'),
+    'key' => env('APP_KEY', 'ahPbH1RViOlBHtNNcP939UPoD06qeIPX'),
 
     'cipher' => 'AES-256-CBC',
 
@@ -137,6 +137,9 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
+        Milon\Barcode\BarcodeServiceProvider::class,
+
+
 
 
         /*
@@ -197,6 +200,8 @@ return [
         'Form'      => Collective\Html\FormFacade::class,
         'Html'      => Collective\Html\HtmlFacade::class,
         'Flash'     => Laracasts\Flash\Flash::class,
+        'DNS1D'     => Milon\Barcode\Facades\DNS1DFacade::class,
+        'DNS2D'     => Milon\Barcode\Facades\DNS2DFacade::class,
 
     ],
 

@@ -10,6 +10,8 @@ use Laracasts\Flash\Flash;
 use App\User;
 use App\Company;
 use Carbon\Carbon;
+use \Milon\Barcode\DNS1D;
+use \Milon\Barcode\DNS2D;
 
 class UsersController extends Controller
 {
@@ -21,7 +23,8 @@ class UsersController extends Controller
     public function index()
     {
         $users = User::orderBy('id', 'ASC')->paginate(5);
-        return view('admin.users.index')->with('users', $users);
+        return view('admin.users.index')
+                ->with('users', $users);
     }
 
     /**
@@ -47,7 +50,6 @@ class UsersController extends Controller
     {
         $user = new User($request->all());
         $user->password = bcrypt($request->password);
-  
         $user->save();
 
         Flash::success("Se ha registrado " . $user->name . " de forma exitosa! ");
@@ -76,7 +78,8 @@ class UsersController extends Controller
     public function edit($id)
     {
         $user = User::find($id);
-        return view('admin.users.edit')->with('user', $user);
+        return view('admin.users.edit')
+                ->with('user', $user);
     }
 
     /**
@@ -89,14 +92,14 @@ class UsersController extends Controller
     public function update(Request $request, $id)
     {
         $user = User::find($id);
-        //$user->fill($request->all());     <-- esta linea hace lo mismo q las otras tres de bajo 
+         //$user->fill($request->all());     <-- esta linea hace lo mismo q las otras tres de bajo 
         $user->name = $request->name;
         $user->lastName = $request->lastName;
         $user->doc_id = $request->doc_id;
         $user->email = $request->email;
         $user->role = $request->role;
-        $user->codigo_pin = $request->codigo_pin;
-        $user->save();
+        $user->codigo_pin = $request->codigo_pin;                                       
+        $user->save();        
 
         Flash::warning('El usuario ' . $user->name . ' ha sido editado correctamente' );
         return redirect()->route('admin.users.index');
