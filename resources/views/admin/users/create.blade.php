@@ -58,18 +58,6 @@
 			{!! Form::date('end_date', $date->toW3cString(),['class' => 'form-control'], 'required') !!}
 		</div>
 		
-		<div class="form-group">
-			{!! Form::label('imageQR', 'Designar QR') !!}
-			{!! Form::email('imageQR', null, ['class' => 'form-control', 'placeholder' => 'Asigne el QR', 'required']) !!}
-			<div class="container" style="margin-top: 60px;">
-			<button class="btn btn-info" data-toggle="modal" data-target="#miventana">
-				Generar QR
-			</button>
-
-			<div class="modal fade" id="miventana" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-				
-			</div>
-			</div>
 		</div>
 
 		<div class="form-group">
